@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap');
+
+:root {
+  --color-bg: #0c0c0d;
+  --color-border: #17171a;
+  --color-heading: #f5f5f5;
+  --color-body: #b8b8ba;
+  --color-muted: #8a8a8d;
+  --color-muted-soft: #7a7a7d;
+  --color-nav-active: #9a9a9e;
+  --color-nav-inactive: #454548;
+  --color-gold: #c9982f;
+  --color-gold-light: #e0b954;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-accent: 'Lora', Georgia, 'Times New Roman', serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100vh;
+  height: 100dvh; /* mobile browsers: ignored where unsupported, keeps the 100vh above */
+}
+
+::selection {
+  background: #333336;
+  color: #f5f5f5;
+}
+
+a {
+  color: #d0d0d2;
+  text-decoration: none;
+  border-bottom: 1px solid #3a3a3d;
+}
+
+a:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.content-scroll,
+.section {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* legacy Edge */
+}
+
+.content-scroll::-webkit-scrollbar,
+.section::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, modern Edge */
+}

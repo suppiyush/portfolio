@@ -1,0 +1,48 @@
+.skills-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.skill-group-label {
+  font-size: 15px;
+  color: #6b6b6e;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  display: inline-flex;
+  padding: 6px 15px;
+  border: 1px solid #232326;
+  border-radius: 999px;
+  font-size: 15px;
+  color: #c7c7c9;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+@media (max-width: 760px) {
+  .skills-groups {
+    gap: 14px;
+  }
+
+  .skill-group-label {
+    font-size: 12px;
+    margin-bottom: 7px;
+  }
+
+  .skill-tags {
+    gap: 7px;
+  }
+
+  .skill-tag {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+}

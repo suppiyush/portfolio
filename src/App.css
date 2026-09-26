@@ -1,0 +1,59 @@
+.app {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  height: 100dvh; /* mobile browsers: avoids address-bar-resize jank */
+  width: 100%;
+  background: var(--color-bg);
+  font-family: var(--font-body);
+  overflow: hidden;
+}
+
+/* Sidebar + content, treated as one unit so the pair centers together
+   instead of the sidebar pinning left and the content centering in
+   whatever space is left over. Width caps at sidebar + gap + content's
+   own max-width so the two line up exactly on wide screens; on narrow
+   screens it just shrinks to fill the viewport. */
+.page {
+  display: flex;
+  width: 100%;
+  max-width: 1416px;
+  gap: 34px;
+  height: 100%;
+}
+
+.content-scroll {
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  /* One wheel/trackpad gesture moves a full section at a time instead of
+     drifting through its empty top/bottom padding — "mandatory" always
+     resolves to a snap point, "always" stops there even on a fast flick
+     rather than skipping past it. */
+  scroll-snap-type: y mandatory;
+}
+
+.content-inner {
+  max-width: 896px;
+  padding: 0 78px;
+  /* % height needs every ancestor's height defined — this cascades down
+     to .section below so a section's height always matches what's
+     actually visible in content-scroll, rather than the raw viewport. */
+  height: 100%;
+}
+
+/* Below this, the fixed-width sidebar + centered content column no longer
+   both fit — switch to nav-on-top, full-width content instead. */
+@media (max-width: 760px) {
+  .page {
+    flex-direction: column;
+    max-width: 100%;
+    gap: 0;
+  }
+
+  .content-inner {
+    max-width: 100%;
+    padding: 0 24px;
+  }
+}

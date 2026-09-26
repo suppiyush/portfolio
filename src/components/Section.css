@@ -1,0 +1,35 @@
+.section {
+  /* Fixed (not min-) height so a section can never grow taller than one
+     screen — a taller one would spill into the outer scroll flow as extra
+     distance that isn't itself a snap point, which is what caused the
+     "lifts, then needs a second scroll" glitch on content-heavy sections.
+     100% (not 100vh) so it always matches content-inner's actual rendered
+     height — which correctly excludes things like the mobile top nav strip
+     via flexbox, where a hardcoded viewport unit would not. Overflow
+     scrolls internally on desktop if content doesn't fit; `safe center`
+     avoids the flexbox bug where centered content that overflows clips
+     its own start. */
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: safe center;
+  padding: 126px 0;
+  border-bottom: 1px solid var(--color-border);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.section--no-border {
+  border-bottom: none;
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding: 24px 0;
+    /* No internal scroll on mobile — every section's content is sized to
+       always fit in one screen, so one scroll gesture always moves
+       cleanly to the next/previous section. */
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,23 @@
+.last-updated {
+  position: fixed;
+  top: 28px;
+  right: 34px;
+  font-size: 15px;
+  color: var(--color-muted-soft);
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  user-select: none;
+  z-index: 10;
+}
+
+@media (max-width: 760px) {
+  .last-updated {
+    /* The sidebar becomes a top strip on mobile — move out of its way,
+       down to the bottom-left corner instead. */
+    top: auto;
+    right: auto;
+    bottom: 14px;
+    left: 16px;
+    font-size: 11px;
+  }
+}

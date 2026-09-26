@@ -1,0 +1,35 @@
+.resume-link {
+  position: fixed;
+  bottom: 28px;
+  right: 34px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--color-muted-soft);
+  letter-spacing: 0.02em;
+  border-bottom: none;
+  z-index: 10;
+}
+
+.resume-link:hover {
+  color: #ffffff;
+}
+
+.resume-link-icon {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 760px) {
+  .resume-link {
+    bottom: 14px;
+    right: 16px;
+    font-size: 13px;
+  }
+
+  .resume-link-icon {
+    width: 15px;
+    height: 15px;
+  }
+}

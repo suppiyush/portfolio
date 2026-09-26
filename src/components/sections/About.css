@@ -1,0 +1,39 @@
+.about-bio {
+  font-size: 21px;
+  line-height: 1.85;
+  color: var(--color-body);
+  max-width: 728px;
+  margin: 0;
+}
+
+.about-joke {
+  font-size: 18px;
+  line-height: 1.85;
+  color: var(--color-muted-soft);
+  font-style: italic;
+  max-width: 672px;
+  margin: 25px 0 0;
+}
+
+.about-greeting {
+  font-family: var(--font-accent);
+  font-weight: 600;
+  color: var(--color-gold);
+  background: linear-gradient(100deg, var(--color-gold-light), var(--color-gold) 55%, #9c721f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 760px) {
+  .about-bio {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .about-joke {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 16px;
+  }
+}

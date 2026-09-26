@@ -1,0 +1,60 @@
+.contact-intro {
+  font-size: 21px;
+  line-height: 1.85;
+  color: var(--color-body);
+  max-width: 672px;
+  margin: 0 0 50px;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  font-size: 18px;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  width: fit-content;
+  color: var(--color-muted);
+  border-bottom: none;
+}
+
+a.contact-link:hover {
+  color: #ffffff;
+}
+
+.contact-link-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.contact-link-value {
+  color: inherit;
+}
+
+@media (max-width: 760px) {
+  .contact-intro {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .contact-links {
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .contact-link {
+    gap: 12px;
+  }
+
+  .contact-link-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
