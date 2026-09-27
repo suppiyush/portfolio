@@ -21,7 +21,20 @@ export function useActiveSection() {
   }, []);
 
   useEffect(() => {
-    updateActive();
+    // Defer past the current paint (double rAF) so this always measures
+    // against a real committed layout, not whatever's on screen the instant
+    // React mounts — e.g. a section can briefly render at its raw content
+    // height before layout-critical CSS (or a web font swap) settles,
+    // which threw off this exact calculation on slower connections.
+    let raf1;
+    let raf2;
+    raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(updateActive);
+    });
+    return () => {
+      cancelAnimationFrame(raf1);
+      cancelAnimationFrame(raf2);
+    };
   }, [updateActive]);
 
   const scrollToSection = useCallback((id) => {
